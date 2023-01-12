@@ -160,23 +160,26 @@ persistence:
   size: 50Mi
 
 config:
-  global: {}
-    # slack_api_url: ''
+  global:
+    slack_api_url: 'https://hooks.slack.com/services/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'
+    
 
   templates:
     - '/etc/alertmanager/*.tmpl'
 
   receivers:
-    - name: default-receiver
-      # slack_configs:
-      #  - channel: '@you'
-      #    send_resolved: true
+    - name: 'slack-notifications'
+      slack_configs:
+      - channel: '#project'
+        username: 'prometheus'
+        text: "summary: {{ .CommonAnnotations.summary }}\ndescription: {{ .CommonAnnotations.description }}"
 
   route:
     group_wait: 10s
-    group_interval: 5m
-    receiver: default-receiver
-    repeat_interval: 3h
+    group_interval: 1m
+    receiver: 'slack-notifications'
+    repeat_interval: 60m
+    group_by: [service]
 
 ## Monitors ConfigMap changes and POSTs to a URL
 ## Ref: https://github.com/jimmidyson/configmap-reload
