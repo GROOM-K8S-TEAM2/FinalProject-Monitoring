@@ -1,8 +1,8 @@
 
 # Monitoring & Logging
 > Monitoring: Prometheus + Grafana + Slack  
-> Prometheus - 기본: prometheus namespace에 설치
-> Grafana - 기본: grafana namespace에 설치
+> Prometheus - 기본: prometheus namespace에 설치  
+> Grafana - 기본: grafana namespace에 설치  
 > slack - 알람을 받기 위해서는 수신 웹 후크 설치 후 slack webhook url 필요  
 > Grafana 기본 설정 - ID: admin / PW: admin  
 
