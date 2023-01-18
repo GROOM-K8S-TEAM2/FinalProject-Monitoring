@@ -1,7 +1,8 @@
 
 # Monitoring & Logging
 > Monitoring: Prometheus + Grafana + Slack  
-> Prometheus, Grafana - 기본: monitoring namespace에 설치 (namespace변경을 원하는 경우 -n 옵션을 변경하면 됩니다.)  
+> Prometheus - 기본: prometheus namespace에 설치 (namespace변경을 원하는 경우 -n 옵션을 변경하면 됩니다.)  
+> Grafana - 기본: grafana namespace에 설치 (namespace변경을 원하는 경우 -n 옵션을 변경하면 됩니다.)  
 > slack - 알람을 받기 위해서는 수신 웹 후크 설치 후 slack webhook url 필요  
 > Grafana 기본 설정 - ID: admin / PW: admin  
 
@@ -11,12 +12,12 @@
 ## 1. Monitoring
 
 ### 1.1 Prometheus 설치
-    helm install prometheus ./prometheus -n monitoring -f ./prometheus/charts/alertmanager/values.yaml --set config.global.slack_api_url="<slack_webhook_url>"
+    helm install prometheus ./prometheus -n prometheus -f ./prometheus/charts/alertmanager/values.yaml --set config.global.slack_api_url="<slack_webhook_url>"
 ### 1.2 Grafana 설치
-    helm install grafana ./grafana -n monitoring
+    helm install grafana ./grafana -n grafana
 ### 1.3 제거
-    helm uninstall grafana -n monitoring
-    helm uninstall prometheus -n monitoring
+    helm uninstall grafana -n grafana
+    helm uninstall prometheus -n prometheus
 
 ***
 ## 2. Logging
