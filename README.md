@@ -15,8 +15,8 @@
 ### 1.2 Grafana 설치
     helm install grafana ./grafana -n monitoring
 ### 1.3 제거
-    helm uninstall grafana
-    helm uninstall prometheus
+    helm uninstall grafana -n monitoring
+    helm uninstall prometheus -n monitoring
 
 ***
 ## 2. Logging
