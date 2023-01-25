@@ -596,7 +596,7 @@ serverFiles:
       rules:
       - alert: InstanceDown
         expr: up == 0
-        for: 2s
+        for: 1m
         labels:
           severity: "critical"
         annotations:
