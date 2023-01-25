@@ -23,12 +23,12 @@
 ## 2. Logging
 
 ### 2.1 ElasticSearch 설치
-    kubectl apply -f elasticsearch.yaml
+    kubectl apply -f elasticsearch.yaml -n elastic
 ### 2.2 Kibana 설치
-    kubectl apply -f kibana.yaml
+    kubectl apply -f kibana.yaml -n elastic
 ### 2.3 Fluentd 설치
-    kubectl apply -f fluentd.yaml
+    kubectl apply -f fluentd.yaml -n elastic
 ### 2.4 제거
-    kubectl delete -f fluentd.yaml
-    kubectl delete -f kibana.yaml
-    kubectl delete -f elasticsearch.yaml
+    kubectl delete -f fluentd.yaml -n elastic
+    kubectl delete -f kibana.yaml -n elastic
+    kubectl delete -f elasticsearch.yaml -n elastic
